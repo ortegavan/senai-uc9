@@ -33,6 +33,7 @@ button {
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
+    font-family: "Montserrat", sans-serif;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -47,7 +48,8 @@ button:hover {
 }
 
 .container {
-    width: 1200px;
+    width: 94%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -110,16 +112,6 @@ nav a.atual:link, a.atual:visited {
 }
 
 /* Banner */
-.banner {
-    background-image: url(../img/banner.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    height: 400px;
-}
-
 .banner-texto {
     margin-bottom: 40px;
     width: 32%;
@@ -162,7 +154,7 @@ nav a.atual:link, a.atual:visited {
 /* Categorias */
 .categorias {
     width: 100%;
-    height: 288px;
+    height: 270px;
     background-color: #F4FBFC;
 }
 
@@ -170,6 +162,7 @@ nav a.atual:link, a.atual:visited {
     height: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 12px;
 }
 
 .card {
@@ -204,7 +197,7 @@ a.card:hover {
 }
 
 .oferta img {
-    max-width: 588px;
+    max-width: 100%;
     border-radius: 6px;
 }
 
@@ -224,9 +217,17 @@ a.oferta:hover {
 /* Produtos */
 .produtos {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
     gap: 24px;
-    flex-wrap: wrap;
+}
+
+.produto {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 0 1 auto;
+    width: 31%;
 }
 
 .produtos p {
@@ -234,13 +235,13 @@ a.oferta:hover {
 }
 
 .produto img {
-    max-width: 384px;
+    width: 100%;
     border-radius: 6px;
 }
 
 .produto input {
     text-align: center;
-}
+} 
 
 .produto a:hover {
     color: #666;
@@ -261,6 +262,7 @@ a.oferta:hover {
     height: 237px;
     font-size: 1.5rem;
     gap: 10px;
+    padding: 24px;
 }
 
 .newsletter div {
@@ -273,7 +275,7 @@ a.oferta:hover {
     margin-right: 10px;
 }
 
-.newsletter input[type=text] {
+.newsletter input[type=email] {
     width: 430px;
     height: 50px;
     font-size: 1rem;
@@ -283,7 +285,7 @@ a.oferta:hover {
     caret-color: #5ACFDA;
 }
 
-.newsletter input[type=text]:focus {
+.newsletter input[type=email]:focus {
     border: solid 2px #5ACFDA;
 }
 
@@ -299,6 +301,7 @@ footer a:hover {
 .rodape {
     display: flex;
     justify-content: space-between;
+    padding: 24px;
 }
 
 .rodape div {
@@ -553,4 +556,428 @@ footer a:hover {
 .resultado-busca img {
     height: 250px;
     width: 250px;
+}
+
+/* Ajustes responsivos */
+/* Tela pequenininha */
+@media screen and (max-width: 447.98px) {
+    .oculto-pp {
+        display: none !important;
+    }
+
+    .margem-topo {
+        margin-top: 0;
+    }
+
+    body {
+        font-size: 12px;
+        background-image: url(../img/banner-320.jpg);
+        background-repeat: no-repeat;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 12px 0 12px;
+    }
+
+    header {
+        height: 120px;
+        position: relative;
+    }
+
+    button {
+        width: 130px;
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    .logo i, .logo span, .menu-m i {
+        font-size: 1.4rem;
+        color: #fff;
+    }
+
+    .banner {
+        background-image: none;
+        display: inline;
+    }
+
+    .banner-texto {
+        display: none !important;
+    }
+
+    .banner-textinho {
+        height: 70px;
+        width: 60%;
+    }
+
+    .banner-textinho a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .produtos {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: start;
+        gap: 12px;
+        margin-bottom: 72px;
+    }
+    
+    .produtos p {
+        line-height: 1.1rem;
+    }
+
+    .produto {
+        display: inline;
+        width: 100%;
+    }
+
+    .produto a {
+        display: flex;
+        gap: 12px;
+    }
+    
+    .produto img {
+        object-fit: cover;
+        object-position: center;
+        height: 100px;
+        width: 100px;
+        border-radius: 6px;
+    }
+    
+    .produto a:hover {
+        color: #666;
+        filter: brightness(120%);
+    }
+
+    .produto-comprar {
+        display: none !important;
+    }
+
+    .menu-mobile {
+        height: 60px;
+        width: 100%;
+        background-color: #5ACFDA;
+        font-size: 1.4rem;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+    }
+
+    .menu-mobile i {
+        color: #fff;
+    }
+
+    .busca-mobile {
+        padding: 12px;
+        margin-top: 12px;
+    }
+
+    .busca-mobile input[type=text] {
+        width: 70%;
+        height: 38px;
+        font-size: .8rem;
+        border: solid 1px #5ACFDA;
+        border-radius: 6px 0 0 6px;
+        padding-left: 10px;
+        caret-color: #5ACFDA;
+    }
+    
+    .busca-mobile input[type=text]:focus {
+        border: solid 2px #5ACFDA;
+    }
+    
+    .busca-mobile button {
+        width: 50px;
+        font-size: .8rem;
+        border-radius: 0 6px 6px 0;
+    }
+}
+
+/* Tela pequena */
+@media screen and (min-width: 448px) and (max-width: 575.98px){
+    .oculto-p {
+        display: none !important;
+    }
+
+    .margem-topo {
+        margin-top: 12px;
+    }
+
+    body {
+        font-size: 12px;
+        background-image: url(../img/banner-576.jpg);
+        background-repeat: no-repeat;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px 0 20px;
+    }
+
+    header {
+        height: 150px;
+        position: relative;
+    }
+
+    button {
+        width: 130px;
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    .menu-m {
+        font-size: 1.4rem;
+    }
+
+    .logo i, .logo span, .menu-m i {
+        color: #fff;
+    }
+
+    .banner {
+        background-image: none;
+        display: inline;
+    }
+
+    .banner-texto {
+        display: none !important;
+    }
+
+    .banner-textinho {
+        height: 100px;
+        width: 50%;
+    }
+
+    .banner-textinho a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .produtos p {
+        line-height: 1.1rem;
+    }
+
+    .produto {
+        width: 28%;
+        min-width: 120px;
+    }
+
+    .direitos {
+        font-size: .7rem;
+    }
+
+    .redes-sociais i, .formas-pagamento i {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tela média */
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+    .oculto-m {
+        display: none !important;
+    }
+
+    .margem-topo {
+        margin-top: 12px;
+    }
+
+    body {
+        font-size: 13px;
+        background-image: url(../img/banner-768.jpg);
+        background-repeat: no-repeat;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 20px 0 20px;
+    }
+
+    header {
+        height: 120px;
+        position: relative;
+    }
+
+    button {
+        width: 130px;
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    .menu-m {
+        font-size: 1.4rem;
+    }
+
+    .logo i, .logo span, .menu-m i, .beneficios, .beneficios i {
+        color: #fff;
+    }
+
+    .banner {
+        background-image: none;
+        display: inline;
+    }
+
+    .banner-texto {
+        width: 48%;
+    }
+
+    .banner-texto a {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .beneficios {
+        font-size: .7rem;
+    }
+
+    .categorias {
+        height: 180px;
+    }
+
+    .card {
+        height: 120px;
+    }
+
+    .ofertas {
+        gap: 12px;
+    }
+
+    .oferta p {
+        font-size: 1.1rem;
+    }
+
+    .produto {
+        width: 30%;
+    }
+
+    .direitos {
+        font-size: .7rem;
+    }
+
+    .redes-sociais i, .formas-pagamento i {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tela grande */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .oculto-g {
+        display: none !important;
+    }
+   
+    .margem-topo {
+        margin-top: 12px;
+    }
+
+    body {
+        font-size: 14px;
+        background-image: url(../img/banner-992.jpg);
+        background-repeat: no-repeat;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 40px 0 40px;
+    }
+
+    header {
+        position: relative;
+    }
+
+    button {
+        width: 130px;
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    .menu-g {
+        width: 60%;
+        position: absolute;
+        top: 30px;
+        left: 20%;
+    }
+
+    .menu-g a, .logo i, .minha-conta i, .beneficios, .beneficios i {
+        color: #fff;
+    }
+
+    .banner {
+        background-image: none;
+        display: inline;
+    }
+
+    .banner-texto {
+        width: 40%;
+    }
+
+    .banner-texto a {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .beneficios {
+        font-size: .7rem;
+    }
+
+    .ofertas {
+        gap: 12px;
+    }
+
+    .oferta p {
+        font-size: 1.1rem;
+    }
+
+    .newsletter {
+        height: 130px;
+        font-size: 1.1rem;
+    }
+
+    .newsletter i {
+        font-size: 2.4rem;
+    }
+
+    .newsletter input[type=email] {
+        height: 38px;
+        width: 320px;
+    }
+}
+
+/* Tela extra grande */ 
+@media screen and (min-width: 992px) {
+    .oculto-gg {
+        display: none !important;
+    }
+
+    .banner {
+        background-image: url(../img/banner.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        height: 400px;
+    }
 }

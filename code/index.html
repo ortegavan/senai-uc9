@@ -14,10 +14,10 @@
         <div>
             <div class="logo">
                 <a href="index.html">
-                    <i class="far fa-gamepad-alt"></i>GameMania
+                    <i class="far fa-gamepad-alt"></i><span class="oculto-g">GameMania</span>
                 </a>
             </div>
-            <div class="contato">
+            <div class="contato oculto-g oculto-m oculto-p oculto-pp">
                 <i class="fal fa-phone-rotary icone-medio turquesa"></i>
                 <p>
                     <strong>
@@ -26,22 +26,27 @@
                     0800 111-2233
                 </p>
             </div>
-            <div class="minha-conta">
-                <a href="#"><i class="fal fa-search"></i></a>
-                <a href="#"><i class="fal fa-user"></i></a>
+            <div class="minha-conta oculto-m oculto-p oculto-pp">
+                <a href="#" class="oculto-g"><i class="fal fa-search"></i></a>
+                <a href="#" class="oculto-g"><i class="fal fa-user"></i></a>
                 <a href="#"><i class="fal fa-heart"></i></a>
                 <a href="carrinho.html"><i class="fal fa-shopping-basket"></i></a>
             </div>
+            <div class="menu-m oculto-gg oculto-g">
+                <a href="#">
+                    <i class="far fa-bars"></i>
+                </a>
+            </div>
         </div>
-        <nav>
-            <a href="index.html" class="atual">Home</a>
-            <a href="#">Lançamentos</a>
-            <a href="#">Destaques</a>
+        <nav class="menu-g oculto-m oculto-p oculto-pp">
+            <a href="index.html" class="atual oculto-g">Home</a>
+            <a href="#" class="oculto-g">Lançamentos</a>
+            <a href="#" class="oculto-g">Destaques</a>
+            <a href="#">Jogos</a>
             <a href="#">PC Gamer</a>
             <a href="#">Eletrônicos</a>
             <a href="#">Periféricos</a>
-            <a href="#">Jogos</a>
-            <a href="#">Colecionáveis</a>
+            <a href="#" class="oculto-g">Colecionáveis</a>
             <a href="#">Vale-presente</a>
         </nav>
     </header>
@@ -51,10 +56,18 @@
                 <a href="#">
                     Vire um GameMania Pro e ganhe 5% de desconto extra em todos os itens
                 </a>
+                <div class="oculto-gg margem-topo">
+                    <button>assinar</button>
+                </div>
+            </div>
+            <div class="banner-textinho oculto-gg oculto-g oculto-m">
+                <a href="#">
+                    Vire Pro e ganhe 5% de desconto <i class="fas fa-arrow-circle-right"></i>
+                </a>
             </div>
         </div>
     </section>
-    <section class="beneficios container">
+    <section class="beneficios container oculto-p oculto-pp">
         <div>
             <i class="fal fa-rocket-launch"></i>
             <p>
@@ -73,7 +86,7 @@
                 em caso de problemas
             </p>
         </div>
-        <div>
+        <div class="oculto-g oculto-m">
             <i class="fal fa-credit-card"></i>
             <p>
                 <strong>
@@ -92,7 +105,7 @@
             </p>
         </div>
     </section>
-    <section class="categorias">
+    <section class="categorias oculto-p oculto-pp">
         <div class="container">
             <h2>Categorias</h2>
             <div class="cards">
@@ -112,18 +125,18 @@
                     <i class="fal fa-microphone"></i>
                     <p>Áudio</p>
                 </a> 
-                <a href="#" class="card">
+                <a href="#" class="card oculto-g oculto-m">
                     <i class="fal fa-lightbulb-on"></i>
                     <p>Smart home</p>
                 </a> 
-                <a href="#" class="card">
+                <a href="#" class="card oculto-g oculto-m">
                     <i class="fal fa-ufo-beam"></i>
                     <p>Drones</p>
                 </a>
             </div>
         </div>
     </section>
-    <section class="container margem-topo">
+    <section class="container margem-topo oculto-p oculto-pp">
         <h2>Ofertas do dia</h2>
         <div class="ofertas">
             <a href="#" class="oferta">
@@ -135,6 +148,9 @@
                 <p>Os melhores fones em 10x sem juros</p>
             </a>
         </div>
+    </section>
+    <section class="busca-mobile oculto-gg oculto-g oculto-m oculto-p">
+        <input type="text" name="busca" id="busca" placeholder="O que você procura?"><button><i class="fas fa-arrow-circle-right"></i></button>
     </section>
     <section class="container margem-topo">
         <h2>Produtos em destaque</h2>
@@ -225,7 +241,7 @@
             </div>
         </div>
     </section>
-    <section class="newsletter margem-topo">
+    <section class="newsletter margem-topo oculto-m oculto-p oculto-pp">
         <div>
             <i class="fal fa-mail-bulk turquesa"></i>
             <p>
@@ -235,11 +251,28 @@
             </p>
         </div>
         <div>
-            <input type="text" name="newsletter" id="newsletter" placeholder="seu e-mail">
+            <input type="email" name="newsletter" id="newsletter" placeholder="seu e-mail">
             <button>enviar</button>
         </div>
     </section>
-    <footer class="container margem-topo">
+    <section class="menu-mobile oculto-gg oculto-g oculto-m oculto-p">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-search"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-heart"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-shopping-basket"></i>
+        </a>
+    </section>
+    <footer class="margem-topo oculto-pp">
         <div class="rodape">
             <div>
                 <h2>
@@ -262,7 +295,7 @@
                 <a href="#">Políticas de privacidade</a>
                 <a href="#">Trabalhe conosco</a>
             </div>
-            <div>
+            <div class="oculto-g oculto-m oculto-p">
                 <h2>
                     Informações adicionais
                 </h2>
@@ -290,7 +323,7 @@
                 </p>
             </div>
         </div>
-        <div class="rodape-menu margem-topo">
+        <div class="rodape-menu margem-topo oculto-p">
             <a href="#">Home</a>
             <a href="#">Sobre</a>
             <a href="#">Comprar</a>
