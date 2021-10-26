@@ -43,6 +43,16 @@ button:hover {
     background-color: #70e2ed;
 }
 
+input {
+    font-family: "Montserrat", sans-serif;
+    color: #999;
+}
+
+::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #ccc;
+}
+
 .turquesa {
     color: #5ACFDA;
 }
@@ -92,6 +102,86 @@ header div {
 
 .minha-conta a:atual {
     color: #5ACFDA;
+}
+
+.minha-conta {
+    position: relative;
+}
+
+/* Quantidade de itens no carrinho e nos favoritos */
+.carrinho-quantidade {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    z-index: 1;
+    background-color: #5ACFDA;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    font-size: .7rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favoritos-quantidade {
+    position: absolute;
+    top: 20px;
+    right: 56px;
+    z-index: 1;
+    background-color: #5ACFDA;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    font-size: .7rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Busca */
+.busca {
+    position: absolute;
+    background-color: #fff;
+    border: solid 1px #eaeaea;
+    border-radius: 6px;
+    padding: 24px;
+    z-index: 1;
+    top: 20px;
+    right: 200px;
+    width: 320%;
+}
+
+.busca input[type=text] {
+    width: 70%;
+    height: 50px;
+    font-size: 1rem;
+    border: solid 1px #5ACFDA;
+    border-radius: 6px 0 0 6px;
+    padding-left: 10px;
+    caret-color: #5ACFDA;
+}
+
+.busca input[type=email]:focus {
+    border: solid 2px #5ACFDA;
+}
+
+.busca button {
+    width: 10%;
+    border-radius: 0 6px 6px 0;
+}
+
+.sombra {
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+                6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+                12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+                22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+                41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+                100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 /* Menu */
@@ -211,7 +301,7 @@ a.card:hover {
 }
  
 a.oferta:hover {
-    filter: brightness(120%);
+    filter: brightness(110%);
 }
 
 /* Produtos */
@@ -235,8 +325,10 @@ a.oferta:hover {
 }
 
 .produto img {
+    object-fit: contain;
+    height: 192px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .produto input {
@@ -245,12 +337,27 @@ a.oferta:hover {
 
 .produto a:hover {
     color: #666;
-    filter: brightness(120%);
+    filter: brightness(110%);
 }
 
 .produto-comprar {
     margin-top: 12px;
     text-align: center;
+}
+
+/* Nenhum produto encontrado */
+.sem-produtos {
+    display: none;
+    text-align: center;
+    margin: 80px 0 80px 0;
+}
+
+.sem-produtos i {
+    font-size: 5rem;
+}
+
+.sem-produtos a {
+    text-decoration: underline;
 }
 
 /* Newsletter */
@@ -349,6 +456,41 @@ footer a:hover {
     text-align: right;
 }
 
+/* Cookies */
+.cookies {
+    height: 380px;
+    width: 380px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    padding: 24px;
+    line-height: 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.cookies p:first-child {
+    text-align: center;
+}
+
+.cookies i {
+    font-size: 4rem;
+    margin-top: 12px;
+}
+
+.cookies a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.cookies button {
+    width: 100%;
+}
+
 /* Breadcrumbs */
 .breadcrumbs {
     background-color: #F4FBFC;
@@ -360,7 +502,7 @@ footer a:hover {
     color: #ababab;
 }
 
-.breadcrumbs a.atual {
+.breadcrumbs a.atual, .breadcrumbs span.atual {
     color: #333;
 }
 
@@ -624,7 +766,7 @@ footer a:hover {
     .produtos {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: start;
+        justify-content: start !important;
         gap: 12px;
         margin-bottom: 72px;
     }
@@ -653,7 +795,7 @@ footer a:hover {
     
     .produto a:hover {
         color: #666;
-        filter: brightness(120%);
+        filter: brightness(110%);
     }
 
     .produto-comprar {
@@ -701,6 +843,14 @@ footer a:hover {
         width: 50px;
         font-size: .8rem;
         border-radius: 0 6px 6px 0;
+    }
+
+    .cookies {
+        height: 300px;
+        width: 93%;
+        left: 12px;
+        bottom: 12px;
+        padding: 12px;
     }
 }
 
@@ -778,12 +928,21 @@ footer a:hover {
         min-width: 120px;
     }
 
+    .produto img {
+        height: 82px;
+    }
+
     .direitos {
         font-size: .7rem;
     }
 
     .redes-sociais i, .formas-pagamento i {
         font-size: 1.1rem;
+    }
+
+    .cookies {
+        height: 300px;
+        width: 300px;
     }
 }
 
@@ -869,12 +1028,21 @@ footer a:hover {
         width: 30%;
     }
 
+    .produto img {
+        height: 120px;
+    }
+
     .direitos {
         font-size: .7rem;
     }
 
     .redes-sociais i, .formas-pagamento i {
         font-size: 1.1rem;
+    }
+
+    .cookies {
+        height: 330px;
+        width: 330px;
     }
 }
 
@@ -950,6 +1118,10 @@ footer a:hover {
         font-size: 1.1rem;
     }
 
+    .produto img {
+        height: 150px;
+    }
+
     .newsletter {
         height: 130px;
         font-size: 1.1rem;
@@ -962,6 +1134,11 @@ footer a:hover {
     .newsletter input[type=email] {
         height: 38px;
         width: 320px;
+    }
+
+    .cookies {
+        height: 330px;
+        width: 330px;
     }
 }
 
