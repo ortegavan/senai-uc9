@@ -43,7 +43,7 @@ button:hover {
     background-color: #70e2ed;
 }
 
-input {
+input, textarea {
     font-family: "Montserrat", sans-serif;
     color: #999;
 }
@@ -65,6 +65,12 @@ input {
 
 .margem-topo {
     margin-top: 30px;
+}
+
+.fad {
+    --fa-secondary-opacity: 1.0;
+    --fa-primary-color: #666;
+    --fa-secondary-color: #5ACFDA;
 }
 
 /* Topo */
@@ -111,7 +117,7 @@ header div {
 /* Quantidade de itens no carrinho e nos favoritos */
 .carrinho-quantidade {
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 10px;
     z-index: 1;
     background-color: #5ACFDA;
@@ -128,7 +134,7 @@ header div {
 
 .favoritos-quantidade {
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 56px;
     z-index: 1;
     background-color: #5ACFDA;
@@ -166,7 +172,7 @@ header div {
     caret-color: #5ACFDA;
 }
 
-.busca input[type=email]:focus {
+.busca input[type=text]:focus {
     border: solid 2px #5ACFDA;
 }
 
@@ -301,7 +307,7 @@ a.card:hover {
 }
  
 a.oferta:hover {
-    filter: brightness(110%);
+    filter: brightness(105%);
 }
 
 /* Produtos */
@@ -337,7 +343,7 @@ a.oferta:hover {
 
 .produto a:hover {
     color: #666;
-    filter: brightness(110%);
+    filter: brightness(105%);
 }
 
 .produto-comprar {
@@ -400,7 +406,21 @@ a.oferta:hover {
     border-radius: 0 6px 6px 0;
 }
 
+/* Estilos genéricos pras páginas ainda em construção */
+.generico {
+    text-align: center;
+    margin: 80px 200px 80px 200px;
+}
+
+.generico i {
+    font-size: 5rem;
+}
+
 /* Rodapé */
+footer {
+    padding-top: 80px;
+}
+
 footer a:hover {
     text-decoration: underline;
 }
@@ -547,6 +567,7 @@ footer a:hover {
 
 .falecom textarea {
     height: 150px;
+    padding-top: 10px;
 }
 
 /* Detalhe do produto */
@@ -556,8 +577,11 @@ footer a:hover {
 }
 
 .detalhe-produto img {
+    object-fit: cover;
+    object-position: center;
     height: 560px;
     width: 560px;
+    border-radius: 8px;
 }
 
 .botao-sacola {
@@ -604,12 +628,16 @@ footer a:hover {
 .carrinho a {
     color: #ababab;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .carrinho img {
+    object-fit: cover;
+    object-position: center;
     height: 150px;
     width: 150px;
     margin-right: 50px;
+    border-radius: 6px;
 }
 
 .carrinho div div {
@@ -622,6 +650,15 @@ footer a:hover {
     right: 0;
 }
 
+.carrinho-voltar {
+    color: #333;
+    margin-right: 24px;
+}
+
+a.carrinho-voltar:hover {
+    text-decoration: underline;
+}
+
 .promocao {
     display: flex;
     border-radius: 10px;
@@ -629,6 +666,10 @@ footer a:hover {
     padding: 24px;
     align-self: flex-start;
     align-items: center;
+}
+
+.promocao div:last-child {
+    text-align: center;
 }
 
 .promocao-off {
@@ -668,7 +709,8 @@ footer a:hover {
 .resultado-busca {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 30px;
 }
 
 .resultado-busca div {
@@ -680,7 +722,7 @@ footer a:hover {
 }
 
 .resultado-busca img:hover {
-    filter: brightness(110%);
+    filter: brightness(105%);
 }
 
 .resultado-busca div:hover {
@@ -689,15 +731,22 @@ footer a:hover {
 
 .resultado-busca p {
     position: absolute;
-    bottom: 12px;
+    bottom: 50px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #5ACFDA;
 }
 
 .resultado-busca img {
+    object-fit: cover;
+    object-position: center;
     height: 250px;
     width: 250px;
+    border-radius: 6px;
+}
+
+.resultado-busca-total, .termo-busca {
+    font-weight: bold;
 }
 
 /* Ajustes responsivos */
@@ -795,7 +844,7 @@ footer a:hover {
     
     .produto a:hover {
         color: #666;
-        filter: brightness(110%);
+        filter: brightness(105%);
     }
 
     .produto-comprar {

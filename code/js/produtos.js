@@ -1,3 +1,67 @@
+var carrinho = {
+    alias: "itensCarrinho",
+    itens: new Map(),
+
+    set adicionar([produto, quantidade]) {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        this.itens.set(produto, quantidade);
+        localStorage.setItem(this.alias, JSON.stringify(Array.from(this.itens)));
+    },
+
+    set remover(produto) {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        this.itens.delete(produto);
+        localStorage.setItem(this.alias, JSON.stringify(Array.from(this.itens)));
+    },
+
+    get ler() {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        return this.itens;
+    },
+
+    get total() {
+        return this.ler.size;
+    }
+};
+
+var favoritos = {
+    alias: "itensFavoritos",
+    itens: new Map(),
+
+    set adicionar([produto, quantidade]) {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        this.itens.set(produto, quantidade);
+        localStorage.setItem(this.alias, JSON.stringify(Array.from(this.itens)));
+    },
+
+    set remover(produto) {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        this.itens.delete(produto);
+        localStorage.setItem(this.alias, JSON.stringify(Array.from(this.itens)));
+    },
+
+    get ler() {
+        if (localStorage.getItem(this.alias) != null) {
+            this.itens = new Map(JSON.parse(localStorage.getItem(this.alias)));
+        }
+        return this.itens;
+    },
+
+    get total() {
+        return this.ler.size;
+    }
+};
+
 var produtos = [
     {
         codigo: 1,
@@ -158,5 +222,5 @@ var produtos = [
         relacionados: [], 
         destaque: false, 
         lancamento: true
-    },
+    }
 ];
