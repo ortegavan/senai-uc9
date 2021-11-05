@@ -7,11 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cesta de compras - Portal GameMania</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="icon" href="img/favicon.svg" sizes="any" type="image/svg+xml">
     <script src="https://kit.fontawesome.com/225117dcca.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/produtos.js"></script>
     <script src="js/main.js"></script>
+    <style>
+        @media screen and (min-width: 448px) and (max-width: 991.98px) {
+            body {
+                background-image: unset;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="container">
@@ -68,7 +76,7 @@
             <a href="valepresente.html">Vale-presente</a>
         </nav>
     </header>
-    <section class="banner">
+    <section class="banner oculto-gg oculto-g oculto-m oculto-p">
         <div class="container">
             <div class="banner-texto">
                 <a href="gamepro.html">
@@ -97,7 +105,7 @@
     <section class="carrinho container margem-topo">
         <div id="carrinho">
         </div>
-        <div class="promocao">
+        <div class="promocao oculto-m oculto-p">
             <div>
                 <span class="promocao-off">
                     15

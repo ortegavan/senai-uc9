@@ -11,6 +11,14 @@ $(document).ready(function () {
         aceitarCookies();
     });
 
+    // oculta o menu responsivo caso a tela seja aumentada com ele aberto
+    $(window).resize(function() {
+        if ($(window).width() >= 768) {
+            $("nav").removeClass("menu-responsivo");
+        } else {
+            $("nav").addClass("menu-responsivo");
+        }}).resize();
+
     // atualiza quantidade de itens no carrinho
     if (carrinho.total > 0) {
         $(".carrinho-quantidade span").text(carrinho.total);
@@ -49,13 +57,13 @@ function exibirCookies() {
 }
 
 function exibirMenuResponsivo() {
-    $("nav").removeClass("oculto-pp").addClass("menu-responsivo");
-    $(".menu-responsivo-fechar").removeClass("oculto-pp");
+    $("nav").removeClass("oculto-pp oculto-p oculto-m").addClass("menu-responsivo");
+    $(".menu-responsivo-fechar").removeClass("oculto-pp oculto-p oculto-m");
 }
 
 function ocultarMenuResponsivo() {
-    $("nav").removeClass("menu-responsivo").addClass("oculto-pp");
-    $(".menu-responsivo-fechar").addClass("oculto-pp");
+    $("nav").removeClass("menu-responsivo").addClass("oculto-pp oculto-p oculto-m");
+    $(".menu-responsivo-fechar").addClass("oculto-pp oculto-p oculto-m");
 }
 
 function buscar() {
