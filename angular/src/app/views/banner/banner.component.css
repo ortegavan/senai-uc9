@@ -1,6 +1,6 @@
 /* Banner */
 .banner {
-    background-image: url(/assets/banner.jpg);
+    background-image: url(~src/assets/banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
