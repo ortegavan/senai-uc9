@@ -10,6 +10,7 @@ import { BannerComponent } from './views/banner/banner.component';
 import { BeneficiosComponent } from './views/beneficios/beneficios.component';
 import { ProdutosComponent } from './views/produtos/produtos.component';
 import { FooterComponent } from './views/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './views/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contato } from 'src/app/models/contato';
 
 @Component({
   selector: 'app-contato',
@@ -12,4 +13,9 @@ export class ContatoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  contatoModel = new Contato("", "", "", "")
+
+  onSubmit() {
+      console.log(this.contatoModel);
+  }
 }
